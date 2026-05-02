@@ -457,7 +457,7 @@ svg{display:block;width:100%;height:auto}
       <div class="map-card-head">
         <div>
           <div class="map-card-title">4층 대관 도면</div>
-          <div class="map-card-sub">대관 운영 기준은 세미나 A / B / C 중심으로 안내</div>
+          <div class="map-card-sub">세미나실 A / B / C는 각각 별도 대관 상품으로 안내</div>
         </div>
         <div class="map-chip">운영 기준: 4F</div>
       </div>
@@ -527,7 +527,7 @@ svg{display:block;width:100%;height:auto}
           <text x="0" y="-6" text-anchor="middle" font-size="9" fill="var(--green)" font-weight="700" font-family="Outfit,sans-serif" letter-spacing="1">HERE</text>
         </g>
       </svg>
-      <div class="map-hint">초록색 세미나 A / B / C가 현재 대관 운영 기준 공간입니다</div>
+      <div class="map-hint">초록색 세미나실 A / B / C가 각각 별도 대관 상품입니다</div>
     </div>
     </div>
   </div>
@@ -541,158 +541,206 @@ svg{display:block;width:100%;height:auto}
 </div>
 
 <script>
-const SPACES={
-overview:{
-  name:"개요 및 공간 구성",sub:"Overview & Space Composition",tag:"문서 개요",
-  icon:"◎",iconBg:"#1c2233",badgeBg:"rgba(255,255,255,.08)",badgeC:"#9ba3b5",
-  sections:[
-    {t:"개요",text:[
-      "본 매뉴얼은 디캠프(D·CAMP) 마포 4~5층 대관 공간에 대한 사전답사 및 투어 안내 시 활용하는 문서입니다.",
-      "운영 매니저가 변경되어도 동일한 방식으로 안내할 수 있도록 층별 기준을 분리해 정리했습니다."
-    ]},
-    {t:"5층 공간 구성",table:{
-      headers:["공간","안내"],
-      rows:[
-        ["박병원홀","메인 대관 공간. 대형 행사용. 약 100석 규모. 서브 테이블 4개, 메인 스크린, 양쪽 98인치 TV, 마이크(유선 1개 + 무선 3개), 강연대 구비"],
-        ["A/C (창고)","의자 및 테이블 보관용 창고. 박병원홀 좌측에 위치. 기본적으로 개방되어 있음"],
-        ["세미나 A","5층 세미나실. 공식 정원 30인, 현장 최대 약 42석 운영 가능. 뒤쪽 유리 창고에 접이식 의자/테이블 보관"],
-        ["컨퍼런스룸","정부 부처 행사 등에 주로 활용. 구조적 특이사항 있음. HDMI 연결 시 사전 요청 필요"]
-      ]
-    }},
-    {t:"4층 공간 구성",table:{
-      headers:["공간","안내"],
-      rows:[
-        ["세미나 A","4층 대관 운영 공간. 도면 기준 Seminar A 구역"],
-        ["세미나 B","4층 대관 운영 공간. 도면 기준 Seminar B 구역"],
-        ["세미나 C","4층 대관 운영 공간. 도면 기준 Seminar C 구역"],
-        ["기타 표기 공간","Meeting / Studio / Office 등은 도면 표기 공간이며, 실제 대관 운영 가능 범위는 별도 확인 필요"]
-      ]
-    }},
-    {t:"4층 · 5층 구분 기준",items:[
-      "5층은 박병원홀, A/C 창고, 세미나 A, 컨퍼런스룸 중심으로 운영",
-      "4층은 도면 기준 세미나 A / B / C를 대관 운영 공간으로 안내",
-      "4층 설명과 5층 설명이 섞이지 않도록 층별로 나누어 안내하는 것이 원칙",
-      "공식 층별 안내와 실제 대관 운영 현황이 다를 수 있으므로, 최종 사용 가능 범위는 한우리님 통해 확인"
-    ]}
-  ]
-},
-bahk:{
-  name:"박병원홀",sub:"Bahk Byongwon Hall",tag:"메인 대관",
-  icon:"B",iconBg:"#4f46e5",badgeBg:"rgba(99,102,241,.15)",badgeC:"#a5b4fc",
-  sections:[
-    {t:"기본 시설 및 배치",items:["테이블이 없는 기본 강연형 의자 배치 공간","기본 좌석 약 100석 배치","오른쪽에 서브 테이블 4개 배치 — 리셉션, 다과, 음료 세팅 등 용도에 맞게 자유롭게 사용 가능","강연대 구비 — 이 규모의 공간은 사회자가 있는 행사가 많은 편","강연대는 가용 범위 내에서 이동하여 진행 가능"]},
-    {t:"영상/음향 장비",items:["노트북 HDMI 연결 시 메인 스크린 + 양쪽 98인치 TV 동시 출력 (기본 세팅)","TV 출력을 원치 않으면 HDMI 선을 뽑아서 끄면 됨 — 건물 측 요청 없이 직접 처리 가능","마이크는 유선 1개 + 무선 3개, 총 4개","무선 마이크는 채널 조정 불필요 — 전원만 켜고 사용하면 됨","⚠️ 주파수 변경 등은 금지","⚠️ 추가 마이크가 필요한 경우 기본적으로는 어려우나, 건바이건 검토 후 지원 가능","⚠️ 추가 마이크는 컨퍼런스룸이 비어 있고, 컨퍼런스룸도 대관된 상태여야 검토 가능","건물 관리실에 요청하여 무선 마이크 세팅 진행","주로 파트너사 또는 장차관급 정부 부처 행사 등은 적극적으로 지원"]},
-    {t:"좌석 배치 조정",items:["의자 수량 조정 가능 — 왼쪽 창고에 의자를 쌓아 이동할 수 있는 수레가 비치되어 있음","의자를 빼고 싶으면 수레를 이용해 창고에 보관하고 행사 후 반드시 원상복구","참가자 인원 대비 공간이 큰 경우 집중력 저하 우려가 있으므로, 참석자 수와 행사 성격을 고려해 배치 결정 권장","행사 주체가 자유롭게 배치 변경 가능하며, 종료 후 현재 상태로 원상복구 필수"]},
-    {t:"홍보물/배너 설치",items:["기본적으로 스탠딩형(세우는 형태) 홍보물만 가능","좌석 양쪽은 자석이 붙는 구조 — 블랙보드에 동그란 자석을 활용해 부착 가능","코너 배치 포함, 원하는 위치로 배치 가능","⚠️ 부착 형태의 홍보물은 금지","⚠️ 제한적으로 허용되는 경우 실리콘 테이프(젤 타입)만 사용 가능","⚠️ 롤업 배너 등으로 디캠프 로고를 가리는 형태(포토존 등)는 금지 — 디캠프 협찬 로고가 명확히 보여야 함"]},
-    {t:"배너/현수막 사전 배송",items:["당일 오전 세팅이 어렵다면 전날 오후에 배송 받아 보관 가능","수령인을 운영 매니저로 설정하고 연락처 공유","참고: 엘리베이터가 없어 수령 후 직접 배치해야 함"]},
-    {t:"케이터링/다과 반입",items:["공간 내 음식 반입 가능 — 내부 취식보다는 포장/배포 형태 또는 음료 정도가 일반적","음료, 핑거푸드, 과자 등 일반적인 다과는 허용","냄새가 심한 음식, 쏟았을 때 오염 위험이 큰 음식은 제한","케이터링 업체 세팅 시 업체가 자체 테이블을 가져오는 경우가 많음","서브 테이블을 활용하거나 아일랜드 테이블과 조합해 세팅 가능","✔ 1층 카페에서 음료, 커피, 휘낭시에 주문 가능 — 20~30개 정도는 미리 요청 후 선결제하면 진행 가능"]},
-    {t:"외부 서명 및 등록 안내",items:["외부에서 서명/등록을 진행하는 경우가 많음","서브 테이블을 밖으로 끌고 나와 배치 가능","다만 비공용 공간이고 맞은편에 두 개의 대관 공간이 있어 타 행사 참석자들도 자연스럽게 왕래할 수 있음","이 구간은 상대적으로 왕래가 적어 외부 등록 테이블 운영에 적합한 편"]},
-    {t:"디스플레이 사용 제한",items:["박병원홀 외부 디스플레이는 디캠프 홍보 영상 전용 화면","⚠️ 외부 디스플레이는 기본적으로 사용 불가","⚠️ 건물 검토가 들어가도 매우 예외적인 특수 행사에만 허용된 적 있음"]},
-    {t:"공간 규모 고려사항",items:["참가자 인원뿐 아니라 PT나 강연 여부에 따라 공간 활용 느낌이 크게 달라짐","반드시 사전답사를 통해 확인한 뒤 최종 결정 권장","공간이 너무 크면 집중력이 떨어질 수 있으므로 행사 성격과 참석자 수를 함께 고려해야 함"]}
-  ]
-},
-storage:{
-  name:"A/C 창고",sub:"Storage",tag:"보관 공간",
-  icon:"A",iconBg:"#52525b",badgeBg:"rgba(255,255,255,.06)",badgeC:"#a1a1aa",
-  sections:[
-    {t:"기본 정보",items:["기본적으로 항상 개방되어 있음","잠겨 있을 경우 비밀번호: 0701*","의자를 쌓아 이동할 수 있는 수레가 비치되어 있음"]},
-    {t:"사용 방법",items:["박병원홀 의자 수량 조정 시 수레를 이용해 창고에 보관하고 행사 후 다시 복구 안내","창고 안에 접이식 테이블과 추가 의자도 보관되어 있음","추가 테이블이 필요한 경우 창고에서 꺼내어 사용 가능","⚠️ 추가 테이블 세팅은 기본적으로 해당 창고 안의 테이블/의자만 사용","⚠️ 누군가 회의 중일 수 있으므로 동시 대관 여부를 반드시 확인 후 진행","⚠️ 창고도 별도 대관이 필요할 수 있으므로 사전 확인 필요"]}
-  ]
-},
-seminar5:{
-  name:"5층 세미나 A",sub:"5F Seminar A",tag:"5층 세미나실",
-  icon:"S",iconBg:"#0d9488",badgeBg:"rgba(20,184,166,.15)",badgeC:"#5eead4",
-  sections:[
-    {t:"기본 정보",items:["5층 세미나실은 세미나 A 한 개 공간으로 운영","공식 정원 30인 기준이나, 현장에서는 약 42석까지 운용 여지가 있음","4층보다 공간이 조금 더 넓고 책상도 더 큰 편","뒤쪽 유리 창고에 접이식 의자와 테이블 보관","4층과 달리 여유 공간이 있어 일부 증원 세팅이 가능"]},
-    {t:"영상 장비",items:["시간이 되면 건물에서 기본 장비를 켜두어 바로 사용 가능","기본은 스크린을 내려 HDMI를 연결해 사용","TV만 단독으로 쓰고 싶다면 미리 요청해야 하며, 건물 관리팀을 통해 세팅 조율 필요","영상 장비 관련 세팅 변경은 건물 관리팀을 통해 요청하는 방식으로 안내"]},
-    {t:"창고 및 좌석 세팅",items:["뒤쪽 유리 창고에 의자와 접이식 테이블 보관","추가 테이블/의자가 필요하면 꺼내어 세팅 가능","행사 후에는 반드시 원상복구해야 함","인원이 40명 안팎이지만 조금 더 늘어날 여지가 있으면 5층 세미나 A가 더 유리한 편"]},
-    {t:"음식 및 현수막 안내",items:["햄버거, 샌드위치처럼 자리에서 편하게 먹을 수 있는 음식은 허용","냄새가 강하거나 오염 이슈가 큰 음식은 제한","5층 세미나 A는 바닥이 카펫이 아니어서 흘리면 닦을 수 있는 편","중간중간 쓰레기 정리만 잘해주면 음식 반입은 비교적 유연하게 대응","현수막/부착물은 기본적으로 금지지만, 사진 촬영이 꼭 필요한 경우 예외적으로 협의 가능","실리콘 젤 테이프만 허용되며 쿠팡·인터넷에서 직접 구매 가능"]},
-    {t:"음향 커스텀 요청",items:["외부 업체를 불러 음향을 커스텀하고 싶다는 요청이 간혹 있음 — 기본적으로 가능","커스텀 니즈가 있으면 사전에 필요 사항을 정리해 공유해야 함","콘솔 설치가 필요하면 작은 창문을 통해 선을 따오는 방식으로 진행 가능","업체와 건물 통신팀장님 연결 필요","⚠️ 콘솔룸(음향 조정실) 출입은 금지 — 원상복구 및 관리 이슈가 발생할 수 있음"]}
-  ]
-},
-floor4:{
-  name:"4층 세미나실",sub:"4F Seminar A / B / C",tag:"4층 대관",
-  icon:"4",iconBg:"#ea580c",badgeBg:"rgba(249,115,22,.12)",badgeC:"#fdba74",
-  sections:[
-    {t:"도면 기준 대관 공간",items:["4층 도면 기준으로는 세미나 A / 세미나 B / 세미나 C를 대관 운영 공간으로 안내","Meeting A / Meeting B / Studio / Office / Startup Alliance 등은 도면 표기 공간이며 기본 대관 안내 대상과는 구분","실제 사용 가능 범위는 행사 일정과 운영 상황에 따라 한우리님 통해 최종 확인 필요"]},
-    {t:"기본 정보",items:["4층 세미나실은 5층과 좌우가 등지고 있는 유사 구조","현장에서는 약 42석 기준으로 안내","약간 더 정사각형에 가까운 느낌이며, 책상이 5층보다 좁아 공간이 더 넓어 보이는 편","인원이 적을 것이 확실하면 4층 사용을 먼저 권장할 수 있음"]},
-    {t:"전자교탁 및 영상 장비",items:["전자교탁은 4층 세미나실 기준으로 안내","전자교탁 내부에 PC와 음향 세팅이 포함되어 있음","PC는 사용 가능하지만 다소 느린 편 — 실제로는 대부분 노트북을 연결해 사용","시간이 되면 건물에서 기본 장비를 켜두어 바로 사용 가능","프로젝터와 스크린은 없고, TV 1대 중심으로 운영","TV 단독 사용이나 별도 세팅이 필요하면 미리 요청해야 하며, 건물 관리팀을 통해 조율","⚠️ 전자교탁은 절대 이동하면 안 됨 — 내부 장비 손상 우려가 있어 원위치 확인 필요"]},
-    {t:"좌석 및 동선",items:["좌석 배치는 내부에서 자유롭게 변경 가능","행사 후에는 현재 배치대로 원상복구 필수","5층과 달리 추가 의자·테이블 여유 창고가 없어 추가 세팅 폭이 작음","4층과 5층을 오가는 행사가 있으면 후면 계단보다 메인 전면 방향 계단 이용 안내 권장"]},
-    {t:"운영상 차이점",items:["5층은 뒤쪽 유리 창고를 활용해 추가 세팅이 가능하지만 4층은 그 여유가 적음","5층은 스크린 기반 운영, 4층은 TV 중심 운영","5층보다 적은 인원 행사에 4층이 더 어울리는 경우가 많음"]}
-  ]
-},
-conference:{
-  name:"컨퍼런스룸",sub:"Conference Room",tag:"정부/VIP",
-  icon:"C",iconBg:"#7c3aed",badgeBg:"rgba(139,92,246,.12)",badgeC:"#c4b5fd",
-  sections:[
-    {t:"구조적 특징",items:["동시 송출이 안 되는 구조 — 누군가 발언 중인데 다른 사람이 누르면 기존 발언이 끊기는 무전기와 유사한 구조","일채용 시스템을 기본적으로 사용","보통 높은 분들 회의에 사용되고, 수행 인원은 양쪽 스툴에서 대기하는 경우가 많음"]},
-    {t:"HDMI/영상 연결",items:["박병원홀과 달리 노트북을 꽂는다고 바로 출력되지 않음","별도의 변경 작업이 필요하므로 사전에 건물 시설 담당자에게 말씀 필수","⚠️ 영상/음향 장비는 건물 신고 운영 관리 소유라 직접 만지면 안 됨","⚠️ 세팅 변경이나 고장 시 책임소재 문제가 생길 수 있으므로 반드시 건물 관리실을 통해 요청"]},
-    {t:"현수막 부착",items:["공기관 행사 특성상 의전, 현수막, 사진 촬영에 매우 민감한 공간","기본적으로 현수막 부착은 불가로 안내","개별 행사 특성상 꼭 필요할 경우 정면 벽 또는 화이트보드 쪽 두 군데로 안내","벽에 자국이 많이 남아 있는 편이라 부착 시 더욱 주의 필요"]},
-    {t:"테이블 이동",items:["컨퍼런스룸이 비어 있고 외부 요청으로 예약이 잡혀 있다면 안쪽 테이블을 박병원홀 등으로 이동해 사용할 수 있음","해당 요청은 행사 건별로 개별 검토 후 결정"]}
-  ]
-},
-common:{
-  name:"공통 안내 사항",sub:"Common Guidelines",tag:"전체 공간",
-  icon:"★",iconBg:"#d97706",badgeBg:"rgba(245,158,11,.12)",badgeC:"#fcd34d",
-  sections:[
-    {t:"QR코드 및 방문자 출입",items:["대관 승인 후 신청자 휴대폰으로 EQR(대관용 QR) 알림이 발송됨","카카오톡 탭 매니저에서 EQR 화면 상단 제목을 누르면 URL 복사 가능","복사한 URL은 문자, 카카오톡, 메일, 폼 등 행사 측이 원하는 방식으로 자유롭게 공유","참가자는 URL로 들어오면 바로 EQR 화면이 떠서 그 화면으로 입장 가능","방문자 초대는 30분 전부터 활성화","마포는 공용 건물이라 1층 메인 게이트 태그가 필수","1층만 찍으면 이후 대관 층까지는 자유롭게 이동 가능","계단 이동 시에도 QR 태그가 필요함","평일 저녁 6시 이후에는 일반적으로 1층 게이트 태그 중심으로 운영","선릉과 달리 마포는 디캠프 단독 건물이 아니라 보안이 더 엄격함","⚠️ QR 이미지 캡처 후 배너 등에 삽입하면 안 됨","⚠️ 핀포인트 정책상 QR코드가 랜덤하게 리셋되어 행사 당일 이미지가 안 먹힐 수 있음","⚠️ 참가자 혼란 및 1층 인포 항의 사례가 발생할 수 있으므로 URL 공유만 안내"]},
-    {t:"층간 이동 (4층~5층)",items:["4층과 5층을 오가는 경우 후면 계단보다 메인 전면 방향 계단 이용 권장","메인 방향 계단 쪽은 4층으로 나오는 층의 자동문을 열어두는 경우가 있어 이동이 더 편함","기본 메인 동선은 엘리베이터 홀이며, 층간 계단 이동은 행사 성격에 따라 예외적으로 안내"]},
-    {t:"1층 배너 배치",items:["고층부 출입 동선과 공용부를 활용해 1층 배너 배치 가능","원하는 위치에 배치 가능","미리 요청하면 1층 메인 게이트 앞쪽에도 배치 가능"]},
-    {t:"와이파이 및 네트워크",items:["층마다 게스트 와이파이가 있으며 비밀번호 없이 연결 가능","일반적인 노트북 작업, 휴대폰 사용에는 문제 없는 수준","간혹 2G/5G 비밀번호 요청이 있을 경우 확인 후 메일로 안내","벽 쪽 콘센트와 유선 포트(랜선)는 사용 가능","⚠️ 랜선과 멀티탭은 행사 측이 직접 준비해야 함 — 기본 대여 없음"]},
-    {t:"에어컨 및 환경",items:["현재 냉방 모드로 운영 중 — 에어컨 자유롭게 사용 가능","창문 오픈도 자유롭게 가능"]},
-    {t:"구내식당 이용",items:["지하 1층(B1F)에 구내식당이 있으며 아워홈이 위탁 운영","외부인도 이용 가능","대관 행사 기준 식사는 1인 7,000원","운영 시간은 11시 30분부터 약 1시 30분까지로 고정","평균 식수는 40~50명 수준","약 50명 이상 단체 이용 시에는 사전 공유가 필수","단체 이용은 사전 현장 카드 결제 후 식권을 받아 당일 참가자에게 배포하는 방식","⚠️ 식당 운영 시간은 변경 불가하므로 행사 시간과 맞춰 조율해야 함"]},
-    {t:"쓰레기 처리 및 정리",items:["소량 쓰레기는 각 층 쓰레기통에 분리배출 가능","대량 쓰레기는 지하 3층 주차장 반대편 벽면 분리수거장 이용","현수막, 배너 등도 지하 3층에서 처리 가능","행사 측에서 현장에서 처리하고 가는 것이 기본","음식물 쓰레기통이 있어 간단한 음식물 쓰레기 처리 가능"],noteTitle:"대량 쓰레기 처리 위치 안내",note:["현장 안내 멘트: '지하 4층까지 가는 엘리베이터 타시고, 지하 3층에서 내린 뒤 문 열고 오른쪽으로 가시면 됩니다.'","5층에는 엘리베이터 호기 표시가 없어, 호수 대신 '지하 4층까지 가는 엘리베이터' 기준으로 설명하는 것이 가장 덜 헷갈림"],figure:"trash-guide"},
-    {t:"기물 파손 및 페널티",items:["원칙적으로 기물 파손 시 청구 가능하다고 안내됨","현재까지 크리티컬한 파손 사례는 없었음","사소한 위반은 넘어가는 경우도 있으나, 행사 수가 많아 라운딩이 완벽히 되지 않는 상황","페널티 제도가 있으며, 테이프 부착 등 위반 발견 시 담당자에게 위반 통보 가능","CCTV로 확인은 가능하지만 리소스가 많이 들어 실제 추적은 드문 편","CCTV 확인은 인사팀 원석님(010-6261-9499)만 가능","바닥 흑색 자국 등은 화학약품으로 제거가 필요할 수 있음"]},
-    {t:"시설 유지/보수",items:["기본적인 시설 유지보수는 건물 관리실에서 담당","마이크 배터리, 전구 교체 등은 별도로 신경 쓰지 않아도 됨","문제 발견 시 공유하면 건물에 신고하여 조치 요청","체크리스트는 별도로 없고 건물 측에서 기본 관리","기본적인 시설과 장비는 건물 관리실이 중심으로 대응"]}
-  ]
-},
-process:{
-  name:"대관 운영 프로세스",sub:"Operation Process",tag:"운영 흐름",
-  icon:"↺",iconBg:"#0d9488",badgeBg:"rgba(20,184,166,.12)",badgeC:"#5eead4",
-  sections:[
-    {t:"대관 신청 및 승인 흐름",items:["TaapSpace 대관 신청 링크를 통해 누구나 신청 가능","신청 가능 범위는 신청일 기준 미래 60일 이내만 오픈","0시 기준이 아니라 현재 시간 기준으로 열림","예: 오늘이 4월 17일 14시라면 6월 16일 14시까지 신청 가능","신청 데이터는 컨트롤룸(관리재단)에서 승인 및 현황 확인","확정되면 운영 매니저에게 전달되어 안내 진행","사전답사가 필요한 경우 건별로 별도 일정 조율","원하는 일정 기준 2주 전에는 신청해두는 편이 안전"]},
-    {t:"일정 변경 시",items:["실무상 가장 간편한 방식은 기존 예약을 일단 유지한 채 변경 가능성을 메일로 먼저 공유하는 것","변경 확정 시에는 변경 일정으로 재신청하고, 담당자가 내용을 이미 알고 있으면 빠르게 승인 가능","동일 행사이고 일정만 바뀌는 경우는 내용 확인이 빠른 편","⚠️ 60일 범위를 벗어나는 미래 일정은 해당 시점에 다시 신청해야 하며 사전 홀딩은 불가"]},
-    {t:"사전답사 진행",items:["승인된 건 중 유선 또는 메일로 일정 소통","공간이 비어 있고 운영이 가능한 조건인지 확인","방문자 초대 발송 후 투어 진행"]},
-    {t:"행사 당일 세팅",items:["기본 세팅(의자 배치, HDMI, 마이크, 빔 프로젝터)은 건물 관리실에서 대응","문 개패도 건물 관리실에서 처리","운영 매니저가 별도로 요청하지 않아도 캘린더를 보고 자동 대응하는 구조","관리실 담당 팀장님, 직원분들, 1층 인포에서도 캘린더를 확인 중"]},
-    {t:"특이사항 처리 흐름",items:["특이사항이 있을 때는 한우리님(담당자)에게 공유 → 확인 받은 후 → 최종 안내","추가 마이크, 테이블 이동, 컨퍼런스룸 장비 사용 등 특별 요청은 모두 사전 협의 필요","랜선, 멀티탭 등은 기본 대여 품목이 아님"]},
-    {t:"디캠프 협력 사항",items:["디캠프는 스타트업 투자, 연계, 입주 사무실 제공 등을 하고 있음","관련 세미나나 행사는 대관 비용 없이 협력 가능한 경우가 있음","특히 입주사들이 함께 들을 수 있는 행사는 더욱 환영","관련 사항은 별도 메일로 문의 후 협의 가능"]},
-    {t:"대규모 외부 행사 (복수 층 통합 대관)",items:["4~5층에 더해 1층까지 통합 대관하는 케이스는 매우 드문 편","NVIDIA 등 네임밸류가 있는 기업이나, 입주사들에게도 의미 있는 프로그램일 경우 유치 방향으로 검토","이 규모의 행사는 보통 대행사를 통해 한우리님에게 문의가 들어옴","한우리님과 디캠프 – 프론트원(건물 관리) 간 합의를 거쳐 대관 진행 여부가 결정","1층은 디캠프 소유 공간이 아니므로 건물 소유측(신용보증기금) 관리팀의 별도 승인이 필요","심야 해커톤 등 비정규 시간대 행사도 건별 검토 대상","행사 기간 중 운영 매니저가 직접 관여할 부분은 크지 않음","⚠️ 철거 완료 후 공간 훼손·오염 여부를 반드시 확인 (한우리님과 함께 현장 점검 권장)","⚠️ 외부 업체가 벽면·바닥에 시트지·부착물을 설치한 경우, 인사팀 확인 후 원상복구 여부 체크 필요","⚠️ 모든 특수 대관 건은 한우리님 사전 협의 → 프론트원 승인 → 진행 순서로 처리"],noteTitle:"참고 사례: NVIDIA Korea Build-a-thon",noteStyle:"neutral",note:["NVIDIA Korea가 4~5층 + 1층에서 해커톤(Build-a-thon) 행사를 진행한 건","본사 측 요청으로 1층 공간도 추가 사용, 건물 관리 측 별도 승인을 받아 진행","NVIDIA 브랜딩 장비(초록색 랩핑 교탁)와 등록 부스, 대형 배너 등을 1층 로비에 설치","이 정도 규모의 복합 대관은 디캠프 기준으로도 최초에 가까운 케이스"],figure:"nvidia-ref"}
-  ]
-},
-contacts:{
-  name:"비상 연락처 및 참고",sub:"Contacts & Reference",tag:"참고",
-  icon:"☎",iconBg:"#dc2626",badgeBg:"rgba(248,113,113,.12)",badgeC:"#fca5a5",
-  sections:[
-    {t:"운영 연락망",table:{headers:["구분","품목","담당자"],rows:[["마포","관리사무소 (시설)","황수연 소장님 (010-4568-7808)"],["마포","아워홈","유영신 점장님 (ryu.youngsin@ourhome.co.kr)"],["선릉","관리사무소 (시설)","강호 소장님 (02-2030-9316 / 010-3628-3994)"],["선릉","관리사무소 (시설)","정재현 주임님 (02-2030-9317 / 010-7644-2756)"],["선릉","새롬빌딩 관리실","최원준 소장님 (02-556-3580 / 010-9253-9275)"],["공통","에프엠텍","이보용 본부장님 (010-5069-0793)"],["공통","에프엠텍","허민준 팀장님 (010-4275-8819)"],["디캠프","공식 이메일","contact@dcamp.kr"]]}},
-    {t:"SP X 디캠프 연락망",table:{headers:["구분","품목","담당자"],rows:[["공통","운영 PM","김가영님 (010-2594-9074)"],["마포","운영 매니저","이보아스님 (010-9100-1308)"],["마포","운영 매니저","임민정님 (010-8801-5877)"],["마포","운영 매니저","최경민님 (010-4035-9035)"],["선릉","운영 매니저","백가은님 (010-4485-5586)"],["선릉","운영 매니저","장은애님 (010-7999-9632)"],["디캠프","담당자","추영진님 (010-9185-2707)"],["디캠프","담당자","한우리님 (010-2086-6213)"],["디캠프","담당자","이원석님 (010-6261-9499)"]]}},
-    {t:"기억해야 할 주요 사항 요약",table:{headers:["항목","내용"],rows:[["창고 비밀번호","0701*"],["홍보물","스탠딩형만 가능, 부착 금지 (예외 시 실리콘 테이프만 허용)"],["QR코드","URL로만 공유, 캡처 금지"],["건물 출입","1층 QR 태그 필수, 계단 이동 시에도 QR 필요"],["전자교탁","4층 세미나실 기준 이동 금지"],["영상/음향 장비","직접 만지지 않기, 건물 통해 요청"],["컨퍼런스룸 HDMI","사전 요청 필수"],["4층 세미나실","세미나 A / B / C 기준으로 안내"],["랜선/멀티탭","행사 측 직접 준비"],["콘솔룸","출입 금지"],["구내식당","B1F, 아워홈 위탁 운영, 대관 기준 7,000원"],["일정 변경","기존 예약 유지 후 메일로 먼저 공유하는 방식이 가장 간편"],["원상복구","모든 공간 행사 후 필수"]]}},
-    {t:"운영 기준 (04월 14일 협의 / PM님, 한우리 매니저님)",noteStyle:"neutral",note:["운영 매니저는 현장 운영 시 공간 환경 및 전반적인 컨디션 확인을 중심으로 대응","시설, 장비, 정책 등 특이사항 또는 추가 요청이 필요한 경우에는 디캠프 한우리님 메일을 통해 별도 문의하도록 안내"]}
-  ]
-},
-archive:{
-  name:"래퍼런스 아카이빙",sub:"Reference Archive",tag:"아카이브",
-  icon:"📁",iconBg:"#6366f1",badgeBg:"rgba(99,102,241,.15)",badgeC:"#a5b4fc",
-  sections:[
-    {t:"NVIDIA Nemotron Developer Days Seoul 2026",figure:"archive-nvidia"},
-    {t:"매뉴얼 UI 네비게이션 현황",figure:"archive-nav"}
-  ]
-}
+const SPACE_DESIGN={
+  "overview": {
+    "icon": "◎",
+    "iconBg": "#1c2233",
+    "badgeBg": "rgba(255,255,255,.08)",
+    "badgeC": "#9ba3b5"
+  },
+  "bahk": {
+    "icon": "B",
+    "iconBg": "#4f46e5",
+    "badgeBg": "rgba(99,102,241,.15)",
+    "badgeC": "#a5b4fc"
+  },
+  "storage": {
+    "icon": "A",
+    "iconBg": "#52525b",
+    "badgeBg": "rgba(255,255,255,.06)",
+    "badgeC": "#a1a1aa"
+  },
+  "seminar5": {
+    "icon": "S",
+    "iconBg": "#0d9488",
+    "badgeBg": "rgba(20,184,166,.15)",
+    "badgeC": "#5eead4"
+  },
+  "floor4": {
+    "icon": "4",
+    "iconBg": "#ea580c",
+    "badgeBg": "rgba(249,115,22,.12)",
+    "badgeC": "#fdba74"
+  },
+  "conference": {
+    "icon": "C",
+    "iconBg": "#7c3aed",
+    "badgeBg": "rgba(139,92,246,.12)",
+    "badgeC": "#c4b5fd"
+  },
+  "common": {
+    "icon": "★",
+    "iconBg": "#d97706",
+    "badgeBg": "rgba(245,158,11,.12)",
+    "badgeC": "#fcd34d"
+  },
+  "process": {
+    "icon": "↺",
+    "iconBg": "#0d9488",
+    "badgeBg": "rgba(20,184,166,.12)",
+    "badgeC": "#5eead4"
+  },
+  "contacts": {
+    "icon": "☎",
+    "iconBg": "#dc2626",
+    "badgeBg": "rgba(248,113,113,.12)",
+    "badgeC": "#fca5a5"
+  },
+  "archive": {
+    "icon": "📁",
+    "iconBg": "#6366f1",
+    "badgeBg": "rgba(99,102,241,.15)",
+    "badgeC": "#a5b4fc"
+  }
 };
-
-const NAV=[
-  {id:"overview",label:"개요",c:"#374151"},
-  {id:"bahk",label:"박병원홀",c:"#4f46e5"},
-  {id:"storage",label:"A/C 창고",c:"#52525b"},
-  {id:"seminar5",label:"5층 세미나 A",c:"#0d9488"},
-  {id:"floor4",label:"4층 세미나실",c:"#ea580c"},
-  {id:"conference",label:"컨퍼런스룸",c:"#7c3aed"},
-  {id:"common",label:"공통 안내",c:"#d97706"},
-  {id:"process",label:"운영 프로세스",c:"#0d9488"},
-  {id:"contacts",label:"연락처",c:"#dc2626"},
-  {id:"archive",label:"아카이브",c:"#6366f1"}
-];
-
+const NAV_STYLE={
+  "overview": {
+    "label": "개요",
+    "c": "#374151"
+  },
+  "bahk": {
+    "label": "박병원홀",
+    "c": "#4f46e5"
+  },
+  "storage": {
+    "label": "A/C 창고",
+    "c": "#52525b"
+  },
+  "seminar5": {
+    "label": "5층 세미나 A",
+    "c": "#0d9488"
+  },
+  "floor4": {
+    "label": "4층 세미나실",
+    "c": "#ea580c"
+  },
+  "conference": {
+    "label": "컨퍼런스룸",
+    "c": "#7c3aed"
+  },
+  "common": {
+    "label": "공통 안내",
+    "c": "#d97706"
+  },
+  "process": {
+    "label": "운영 프로세스",
+    "c": "#0d9488"
+  },
+  "contacts": {
+    "label": "연락처",
+    "c": "#dc2626"
+  },
+  "archive": {
+    "label": "아카이브",
+    "c": "#6366f1"
+  }
+};
+const FIGURE_KEYS=new Set(["trash-guide","nvidia-ref","archive-nvidia","archive-nav"]);
+let SPACES={};
+let NAV=[];
 let current="overview";
+
+function buildNav(content){
+  return content.spaces
+    .slice()
+    .sort((a,b)=>(a.order??999)-(b.order??999))
+    .map(space=>({
+      id:space.id,
+      label:NAV_STYLE[space.id]?.label||space.name,
+      c:NAV_STYLE[space.id]?.c||"var(--accent)"
+    }));
+}
+
+function blocksToLegacySection(section){
+  const legacy={t:section.title};
+  (section.blocks||[]).forEach(block=>{
+    if(block.type==="paragraph")legacy.text=block.content||[];
+    if(block.type==="items")legacy.items=block.items||[];
+    if(block.type==="table")legacy.table={headers:block.headers||[],rows:block.rows||[]};
+    if(block.type==="note"){
+      legacy.note=block.content||[];
+      if(block.noteTitle)legacy.noteTitle=block.noteTitle;
+      if(block.noteStyle)legacy.noteStyle=block.noteStyle;
+    }
+    if(block.type==="figure")legacy.figure=block.figureKey;
+  });
+  return legacy;
+}
+
+function hydrateContent(content){
+  validateContent(content);
+  const spaces={};
+  content.spaces
+    .slice()
+    .sort((a,b)=>(a.order??999)-(b.order??999))
+    .forEach(space=>{
+      spaces[space.id]={
+        ...space,
+        ...(SPACE_DESIGN[space.id]||{}),
+        sections:(space.sections||[])
+          .slice()
+          .sort((a,b)=>(a.order??999)-(b.order??999))
+          .map(blocksToLegacySection)
+      };
+    });
+  return spaces;
+}
+
+function validateContent(content){
+  if(!content||!Array.isArray(content.spaces))throw new Error("content.json에 spaces 배열이 없습니다.");
+  const ids=new Set();
+  content.spaces.forEach(space=>{
+    if(!space.id)throw new Error("space.id가 비어 있습니다.");
+    if(ids.has(space.id))throw new Error(`space.id가 중복되었습니다: ${space.id}`);
+    ids.add(space.id);
+    if(!space.name)throw new Error(`space.name이 비어 있습니다: ${space.id}`);
+    if(!Array.isArray(space.sections))throw new Error(`sections 배열이 없습니다: ${space.id}`);
+    space.sections.forEach(section=>{
+      if(!section.title)throw new Error(`section.title이 비어 있습니다: ${space.id}`);
+      if(!Array.isArray(section.blocks))throw new Error(`blocks 배열이 없습니다: ${space.id} / ${section.title}`);
+      section.blocks.forEach(block=>{
+        if(!["paragraph","items","table","note","figure"].includes(block.type)){
+          throw new Error(`지원하지 않는 block.type입니다: ${block.type}`);
+        }
+        if(block.type==="figure"&&!FIGURE_KEYS.has(block.figureKey)){
+          throw new Error(`지원하지 않는 figure_key입니다: ${block.figureKey}`);
+        }
+      });
+    });
+  });
+}
+
+function renderLoading(){
+  document.getElementById("content").innerHTML=`<div class="space-panel"><div class="section-body open"><p class="paragraph">매뉴얼 데이터를 불러오는 중입니다.</p></div></div>`;
+}
+
+function renderLoadError(error){
+  const localHint=location.protocol==="file:"?" 로컬 파일로 직접 열면 브라우저 보안 정책 때문에 content.json을 읽지 못할 수 있습니다. 이 폴더에서 python3 -m http.server 8080 실행 후 http://localhost:8080 으로 확인하세요.":"";
+  document.getElementById("content").innerHTML=`<div class="space-panel"><div class="note-box"><strong>매뉴얼 데이터를 불러오지 못했습니다.</strong><div>${escapeHtml(error.message||String(error))}</div><div>${escapeHtml(localHint)}</div></div></div>`;
+}
+
+async function loadContent(){
+  renderLoading();
+  const url=new URL("content.json",location.href);
+  url.searchParams.set("v",Date.now().toString());
+  const response=await fetch(url);
+  if(!response.ok)throw new Error(`content.json 응답 오류: ${response.status}`);
+  const content=await response.json();
+  SPACES=hydrateContent(content);
+  NAV=buildNav(content);
+  if(!SPACES[current])current=NAV[0]?.id||"overview";
+  renderAll();
+}
 
 function escapeHtml(v){return String(v).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/\"/g,"&quot;").replace(/'/g,"&#39;")}
 function renderItems(items){return items.map(it=>{const w=String(it).startsWith("⚠️");return`<div class="item${w?" warn":""}">${escapeHtml(it)}</div>`}).join("")}
@@ -712,12 +760,12 @@ function renderContent(){const el=document.getElementById("content");const d=SPA
 function renderAll(){renderNav();renderContent()}
 window.toggleSection=function(el){el.classList.toggle("open");const body=el.nextElementSibling;if(body)body.classList.toggle("open")};
 
-document.querySelectorAll(".room").forEach(room=>{room.addEventListener("click",()=>{current=room.dataset.id;renderAll();document.getElementById("nav").scrollIntoView({behavior:"smooth",block:"start"})})});
+document.querySelectorAll(".room").forEach(room=>{room.addEventListener("click",()=>{const nextId=room.dataset.id;if(!SPACES[nextId])return;current=nextId;renderAll();document.getElementById("nav").scrollIntoView({behavior:"smooth",block:"start"})})});
 
 const navEl=document.getElementById("nav");
 const observer=new IntersectionObserver(([entry])=>{navEl.classList.toggle("stuck",!entry.isIntersecting)},{threshold:[1],rootMargin:"-1px 0px 0px 0px"});
 observer.observe(navEl);
-renderAll();
+loadContent().catch(renderLoadError);
 </script>
 </body>
 </html>
